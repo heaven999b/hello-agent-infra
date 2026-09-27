@@ -1,0 +1,23 @@
+[project]
+name = "codesign-sim"
+version = "0.1.0"
+description = "Hello Agent Infra：20 小时 Harness × Inference 协同设计速成，配套可在笔记本上运行的推理/训练系统模拟器"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["codesign_sim", "mini_engine"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "modules", "capstone"]
+addopts = "--import-mode=importlib"
+python_files = ["test_*.py"]
